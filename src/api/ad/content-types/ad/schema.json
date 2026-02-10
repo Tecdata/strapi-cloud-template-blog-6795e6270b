@@ -22,7 +22,8 @@
         "home_top_banner",
         "home_bottom_banner",
         "match_footer_banner",
-        "home_feed_card"
+        "home_feed_card",
+        "start_splash_banner"
       ]
     },
     "isActive": {

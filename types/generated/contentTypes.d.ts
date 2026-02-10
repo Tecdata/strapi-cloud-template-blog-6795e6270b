@@ -489,6 +489,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
         'home_bottom_banner',
         'match_footer_banner',
         'home_feed_card',
+        'start_splash_banner',
       ]
     > &
       Schema.Attribute.Required;
