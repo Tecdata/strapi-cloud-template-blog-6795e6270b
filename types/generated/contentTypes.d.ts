@@ -475,15 +475,6 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     endAt: Schema.Attribute.DateTime;
-    height: Schema.Attribute.Integer &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 400;
-          min: 100;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<100>;
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     isActive: Schema.Attribute.Boolean &
