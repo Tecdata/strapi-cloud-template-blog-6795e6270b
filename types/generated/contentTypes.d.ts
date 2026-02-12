@@ -475,6 +475,15 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     endAt: Schema.Attribute.DateTime;
+    height: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 400;
+          min: 100;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<100>;
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     isActive: Schema.Attribute.Boolean &
@@ -485,11 +494,15 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     placementKey: Schema.Attribute.Enumeration<
       [
-        'home_top_banner',
-        'home_bottom_banner',
-        'match_footer_banner',
-        'home_feed_card',
+        'home_following_banner',
+        'home_news_banner',
+        'athlete_profile_banner',
+        'team_profile_banner',
+        'team_fixture_banner',
+        'team_formation_banner',
         'start_splash_banner',
+        'between_matches_banner',
+        'match_bottom_banner',
       ]
     > &
       Schema.Attribute.Required;
