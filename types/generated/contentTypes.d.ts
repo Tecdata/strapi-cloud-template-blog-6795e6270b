@@ -470,6 +470,8 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    bannerHeight: Schema.Attribute.Enumeration<['s', 'm', 'l', 'xl']> &
+      Schema.Attribute.DefaultTo<'s'>;
     clickUrl: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -59,6 +59,16 @@
     },
     "endAt": {
       "type": "datetime"
+    },
+    "bannerHeight": {
+      "type": "enumeration",
+      "default": "s",
+      "enum": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ]
     }
   }
 }
