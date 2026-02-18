@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_names",
+  "info": {
+    "singularName": "app-name",
+    "pluralName": "app-names",
+    "displayName": "appName"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "ls-femebal",
+        "ls-aahba"
+      ]
+    }
+  }
+}

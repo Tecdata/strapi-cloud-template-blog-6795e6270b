@@ -470,6 +470,8 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    appName: Schema.Attribute.Enumeration<['femebal', 'aahba']> &
+      Schema.Attribute.Required;
     bannerHeight: Schema.Attribute.Enumeration<['s', 'm', 'l', 'xl']>;
     clickUrl: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
@@ -510,6 +512,34 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     startAt: Schema.Attribute.DateTime;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAppNameAppName extends Struct.CollectionTypeSchema {
+  collectionName: 'app_names';
+  info: {
+    displayName: 'appName';
+    pluralName: 'app-names';
+    singularName: 'app-name';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::app-name.app-name'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.Enumeration<['ls-femebal', 'ls-aahba']>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1164,6 +1194,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::ad.ad': ApiAdAd;
+      'api::app-name.app-name': ApiAppNameAppName;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
