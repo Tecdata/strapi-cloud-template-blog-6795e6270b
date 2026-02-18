@@ -470,6 +470,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    bannerHeight: Schema.Attribute.Enumeration<['s', 'm', 'l', 'xl']>;
     clickUrl: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -485,11 +486,14 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     placementKey: Schema.Attribute.Enumeration<
       [
-        'home_top_banner',
-        'home_bottom_banner',
-        'match_footer_banner',
-        'home_feed_card',
         'start_splash_banner',
+        'home_following_banner',
+        'home_news_banner',
+        'athlete_profile_banner',
+        'team_profile_banner',
+        'team_fixture_banner',
+        'team_formation_banner',
+        'between_matches_banner',
       ]
     > &
       Schema.Attribute.Required;

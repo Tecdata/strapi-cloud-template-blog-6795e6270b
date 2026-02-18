@@ -19,11 +19,14 @@
       "type": "enumeration",
       "required": true,
       "enum": [
-        "home_top_banner",
-        "home_bottom_banner",
-        "match_footer_banner",
-        "home_feed_card",
-        "start_splash_banner"
+        "start_splash_banner",
+        "home_following_banner",
+        "home_news_banner",
+        "athlete_profile_banner",
+        "team_profile_banner",
+        "team_fixture_banner",
+        "team_formation_banner",
+        "between_matches_banner"
       ]
     },
     "isActive": {
@@ -55,6 +58,15 @@
     },
     "endAt": {
       "type": "datetime"
+    },
+    "bannerHeight": {
+      "type": "enumeration",
+      "enum": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ]
     }
   }
 }
