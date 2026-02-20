@@ -75,6 +75,13 @@
         "femebal",
         "aahba"
       ]
+    },
+    "bannerType": {
+      "type": "enumeration",
+      "enum": [
+        "banner",
+        "logo"
+      ]
     }
   }
 }

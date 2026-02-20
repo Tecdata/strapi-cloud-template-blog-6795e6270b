@@ -473,6 +473,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     appName: Schema.Attribute.Enumeration<['femebal', 'aahba']> &
       Schema.Attribute.Required;
     bannerHeight: Schema.Attribute.Enumeration<['s', 'm', 'l', 'xl']>;
+    bannerType: Schema.Attribute.Enumeration<['banner', 'logo']>;
     clickUrl: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
